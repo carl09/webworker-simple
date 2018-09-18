@@ -3,29 +3,33 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Web Workers</title>
+    <title>Simple Web Workers</title>
 
 <body>
 
-    <progress id="display" max="100" value="0"></progress>
+    <div class="container">
+        <h1>Show Progress</h1>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col">
-                <div>.</div>
-                <button id="start" type="button" class="btn btn-secondary">Start Animation</button>
-            </div>
-            <div class="col">
-                <div id="inline-label">Not Run</div>
-                <button id="inline" type="button" class="btn btn-secondary">Run Inline</button>
-            </div>
-            <div class="col">
-                <div id="promise-label">Not Run</div>
-                <button id="promise" type="button" class="btn btn-secondary">Run in Promise</button>
-            </div>
-            <div class="col">
-                <div id="webworker-label">Not Run</div>
-                <button id="webworker" type="button" class="btn btn-secondary">Run in Web Worker</button>
+        <progress id="display" max="100" value="0"></progress>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <div>.</div>
+                    <button id="start" type="button" class="btn btn-secondary">Start Animation</button>
+                </div>
+                <div class="col">
+                    <div id="inline-label">Not Run</div>
+                    <button id="inline" type="button" class="btn btn-secondary">Run Inline</button>
+                </div>
+                <div class="col">
+                    <div id="promise-label">Not Run</div>
+                    <button id="promise" type="button" class="btn btn-secondary">Run in Promise</button>
+                </div>
+                <div class="col">
+                    <div id="webworker-label">Not Run</div>
+                    <button id="webworker" type="button" class="btn btn-secondary">Run in Web Worker</button>
+                </div>
             </div>
         </div>
     </div>

@@ -45,26 +45,17 @@ module.exports = {
         use: [{
             loader: MiniCssExtractPlugin.loader,
             options: {
-              // you can specify a publicPath here
-              // by default it use publicPath in webpackOptions.output
               publicPath: '../'
             }
           },
           'css-loader',
           "sass-loader"
         ]
-        // use: ExtractTextPlugin.extract({
-        //   fallback: "style-loader",
-        //   use: ["css-loader", "sass-loader"]
-        // })
-        // use: [
-        //   { loader: "style-loader" },
-        //   { loader: "css-loader" },
-        //   { loader: "sass-loader" }
-        // ]
       }
     ]
   },
   devtool: "cheap-module-source-map",
-  devServer: {}
+  devServer: {
+    port: 4210
+  }
 };

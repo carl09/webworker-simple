@@ -8,7 +8,7 @@ const promiseLabel = document.getElementById("promise-label");
 const webWorkerLabel = document.getElementById("webworker-label");
 
 document.getElementById("inline").onclick = () => {
-  kill(killDelay,x => {
+  kill(killDelay, x => {
     console.log("from inline: ", x);
     inlineLabel.innerText = x.toString();
   });
@@ -25,9 +25,14 @@ document.getElementById("promise").onclick = () => {
 };
 
 document.getElementById("webworker").onclick = () => {
-  const worker = new Worker(
-    URL.createObjectURL(new Blob([kill.toString(), `(${killWrapper})(${killDelay})`]))
+  const blobUrl = URL.createObjectURL(
+    new Blob([kill.toString(), `(${killWrapper})(${killDelay})`])
   );
+
+  console.log("Blob Url", blobUrl);
+
+  const worker = new Worker(blobUrl);
+
   worker.addEventListener("message", e => {
     console.log("from web worker: ", e.data);
     webWorkerLabel.innerText = e.data;
